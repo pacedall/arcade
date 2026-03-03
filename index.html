@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pacedall Arcade – Play. Score. Repeat.</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Orbitron:wght@400;600;800;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo.png" alt="Pacedall Arcade" />
+      </a>
+      <ul class="nav-links">
+        <li><a href="#featured">Featured</a></li>
+        <li><a href="#categories">Categories</a></li>
+        <li><a href="#leaderboard">Leaderboard</a></li>
+        <li><a href="#about">About</a></li>
+      </ul>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn-ghost">Log In</a>
+        <a href="signup.html" class="btn btn-primary">Play Free</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-grid-overlay"></div>
+    <div class="hero-inner">
+      <div class="hero-badge">🕹️ New Games Every Week</div>
+      <h1 class="hero-title">
+        Level Up<br/>
+        <span class="title-accent">Your World.</span>
+      </h1>
+      <p class="hero-sub">Browser-based arcade games crafted by Pacedall Labs. No downloads. No installs. Pure fun.</p>
+      <div class="hero-cta">
+        <a href="#featured" class="btn btn-primary btn-lg">Start Playing →</a>
+        <a href="#categories" class="btn btn-outline btn-lg">Browse Games</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><span class="stat-num">50+</span><span class="stat-label">Games</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">Free</span><span class="stat-label">Always</span></div>
+        <div class="stat-divider"></div>
+        <div class="stat"><span class="stat-num">24/7</span><span class="stat-label">Online</span></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="arcade-cabinet">
+        <div class="cabinet-screen">
+          <div class="screen-scanlines"></div>
+          <div class="screen-content">
+            <div class="pixel-game">
+              <div class="pixel-score">SCORE: <span id="score-display">00000</span></div>
+              <canvas id="mini-game" width="280" height="200"></canvas>
+              <div class="pixel-lives">♥ ♥ ♥</div>
+            </div>
+          </div>
+        </div>
+        <div class="cabinet-controls">
+          <div class="joystick"></div>
+          <div class="buttons-group">
+            <div class="arcade-btn btn-red"></div>
+            <div class="arcade-btn btn-blue"></div>
+            <div class="arcade-btn btn-yellow"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker-wrap">
+    <div class="ticker-track">
+      <span>🏆 New High Score: PacePlayer99 — Snake Rush</span>
+      <span>🎮 Just Added: Gravity Jump</span>
+      <span>🔥 Trending: Pixel Dodge</span>
+      <span>⚡ 1,200 players online now</span>
+      <span>🏆 New High Score: ArcadeKing — Tower Blitz</span>
+      <span>🎮 Just Added: Neon Rider</span>
+      <span>🔥 Trending: Retro Blaster</span>
+      <span>⚡ Free to play, no sign-up needed</span>
+      <span>🏆 New High Score: PacePlayer99 — Snake Rush</span>
+      <span>🎮 Just Added: Gravity Jump</span>
+      <span>🔥 Trending: Pixel Dodge</span>
+      <span>⚡ 1,200 players online now</span>
+      <span>🏆 New High Score: ArcadeKing — Tower Blitz</span>
+      <span>🎮 Just Added: Neon Rider</span>
+      <span>🔥 Trending: Retro Blaster</span>
+      <span>⚡ Free to play, no sign-up needed</span>
+    </div>
+  </div>
+
+  <!-- ===== FEATURED GAMES ===== -->
+  <section class="section" id="featured">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">⭐ Featured</span>
+        <h2 class="section-title">Today's Hot Picks</h2>
+        <p class="section-sub">Handpicked games from the Pacedall Labs team</p>
+      </div>
+      <div class="games-featured-grid">
+        <div class="game-card game-card--hero" data-tag="HOT">
+          <div class="game-thumb" style="background: linear-gradient(135deg, #FF6B35 0%, #FFB700 60%, #FF6B35 100%);">
+            <div class="game-icon">🌊</div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="tag tag-hot">🔥 Hot</span><span class="tag tag-free">Free</span></div>
+            <h3 class="game-name">Wave Rider</h3>
+            <p class="game-desc">Surf endless procedural waves and dodge obstacles in this hypnotic endless runner.</p>
+            <div class="game-footer">
+              <div class="game-rating">★★★★★ <span>4.9</span></div>
+              <a href="#" class="btn btn-primary btn-sm">Play Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="game-card" data-tag="NEW">
+          <div class="game-thumb" style="background: linear-gradient(135deg, #1B3A8C 0%, #3B82F6 100%);">
+            <div class="game-icon">⚡</div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="tag tag-new">✨ New</span><span class="tag tag-free">Free</span></div>
+            <h3 class="game-name">Gravity Jump</h3>
+            <p class="game-desc">Flip gravity mid-air and survive increasingly treacherous platforms.</p>
+            <div class="game-footer">
+              <div class="game-rating">★★★★☆ <span>4.6</span></div>
+              <a href="#" class="btn btn-primary btn-sm">Play Now</a>
+            </div>
+          </div>
+        </div>
+        <div class="game-card" data-tag="PRO">
+          <div class="game-thumb" style="background: linear-gradient(135deg, #7C3AED 0%, #EC4899 100%);">
+            <div class="game-icon">🚀</div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="tag tag-pro">👑 Pro</span><span class="tag tag-sub">Premium</span></div>
+            <h3 class="game-name">Neon Blaster</h3>
+            <p class="game-desc">Retro space shooter with modern twin-stick controls and endless enemy waves.</p>
+            <div class="game-footer">
+              <div class="game-rating">★★★★★ <span>5.0</span></div>
+              <a href="signup.html" class="btn btn-outline btn-sm">Unlock</a>
+            </div>
+          </div>
+        </div>
+        <div class="game-card" data-tag="NEW">
+          <div class="game-thumb" style="background: linear-gradient(135deg, #059669 0%, #34D399 100%);">
+            <div class="game-icon">🐍</div>
+          </div>
+          <div class="game-info">
+            <div class="game-meta"><span class="tag tag-new">✨ New</span><span class="tag tag-free">Free</span></div>
+            <h3 class="game-name">Snake Rush</h3>
+            <p class="game-desc">The classic reimagined with power-ups, portals, and multiplayer leaderboards.</p>
+            <div class="game-footer">
+              <div class="game-rating">★★★★☆ <span>4.7</span></div>
+              <a href="#" class="btn btn-primary btn-sm">Play Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATEGORIES ===== -->
+  <section class="section section-alt" id="categories">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">🗂 Browse</span>
+        <h2 class="section-title">Game Categories</h2>
+        <p class="section-sub">Find your style — from chill to competitive</p>
+      </div>
+      <div class="categories-grid">
+        <a href="#" class="category-card cat-action">
+          <div class="cat-icon">⚔️</div>
+          <div class="cat-name">Action</div>
+          <div class="cat-count">12 Games</div>
+        </a>
+        <a href="#" class="category-card cat-puzzle">
+          <div class="cat-icon">🧩</div>
+          <div class="cat-name">Puzzle</div>
+          <div class="cat-count">9 Games</div>
+        </a>
+        <a href="#" class="category-card cat-racing">
+          <div class="cat-icon">🏎️</div>
+          <div class="cat-name">Racing</div>
+          <div class="cat-count">7 Games</div>
+        </a>
+        <a href="#" class="category-card cat-endless">
+          <div class="cat-icon">♾️</div>
+          <div class="cat-name">Endless</div>
+          <div class="cat-count">11 Games</div>
+        </a>
+        <a href="#" class="category-card cat-retro">
+          <div class="cat-icon">👾</div>
+          <div class="cat-name">Retro</div>
+          <div class="cat-count">8 Games</div>
+        </a>
+        <a href="#" class="category-card cat-chill">
+          <div class="cat-icon">😌</div>
+          <div class="cat-name">Chill</div>
+          <div class="cat-count">6 Games</div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ALL GAMES GRID ===== -->
+  <section class="section" id="all-games">
+    <div class="section-inner">
+      <div class="section-header-row">
+        <div>
+          <span class="section-tag">🎮 Library</span>
+          <h2 class="section-title">All Games</h2>
+        </div>
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="free">Free</button>
+          <button class="filter-btn" data-filter="premium">Premium</button>
+          <button class="filter-btn" data-filter="new">New</button>
+        </div>
+      </div>
+      <div class="games-grid" id="games-grid">
+        <!-- Games dynamically inserted by JS -->
+      </div>
+      <div class="load-more-wrap">
+        <button class="btn btn-outline" id="load-more">Load More Games</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== LEADERBOARD ===== -->
+  <section class="section section-alt" id="leaderboard">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-tag">🏆 Top Players</span>
+        <h2 class="section-title">Leaderboard</h2>
+        <p class="section-sub">Who's dominating the arcade this week?</p>
+      </div>
+      <div class="leaderboard-wrap">
+        <div class="leaderboard-tabs">
+          <button class="lb-tab active" data-game="all">All Games</button>
+          <button class="lb-tab" data-game="wave-rider">Wave Rider</button>
+          <button class="lb-tab" data-game="snake">Snake Rush</button>
+          <button class="lb-tab" data-game="neon">Neon Blaster</button>
+        </div>
+        <div class="leaderboard-table">
+          <div class="lb-header">
+            <span>Rank</span><span>Player</span><span>Game</span><span>Score</span>
+          </div>
+          <div class="lb-rows" id="lb-rows">
+            <!-- Populated by JS -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PRO CTA ===== -->
+  <section class="section pro-cta">
+    <div class="section-inner">
+      <div class="pro-card">
+        <div class="pro-card-content">
+          <span class="section-tag">👑 Pacedall Pro</span>
+          <h2 class="pro-title">Unlock the Full Arcade</h2>
+          <p class="pro-desc">Get access to 20+ exclusive premium games, no ads, cloud save, and early access to every new release.</p>
+          <div class="pro-features">
+            <div class="pro-feature">✅ 20+ Premium Games</div>
+            <div class="pro-feature">✅ Ad-Free Experience</div>
+            <div class="pro-feature">✅ Cloud Save Progress</div>
+            <div class="pro-feature">✅ Early Access Releases</div>
+            <div class="pro-feature">✅ Exclusive Leaderboards</div>
+            <div class="pro-feature">✅ Monthly New Games</div>
+          </div>
+          <div class="pro-pricing">
+            <div class="price-card">
+              <div class="price-label">Monthly</div>
+              <div class="price-amount">$4.99<span>/mo</span></div>
+              <a href="signup.html" class="btn btn-primary">Get Started</a>
+            </div>
+            <div class="price-card price-card--featured">
+              <div class="price-badge">Best Value</div>
+              <div class="price-label">Annual</div>
+              <div class="price-amount">$39.99<span>/yr</span></div>
+              <div class="price-save">Save 33%</div>
+              <a href="signup.html" class="btn btn-primary">Get Started</a>
+            </div>
+          </div>
+        </div>
+        <div class="pro-card-visual">
+          <div class="pro-glow-ring"></div>
+          <div class="pro-icon">👑</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section class="section" id="about">
+    <div class="section-inner about-inner">
+      <div class="about-text">
+        <span class="section-tag">🏢 About</span>
+        <h2 class="section-title">Built by Pacedall Labs</h2>
+        <p>Pacedall Arcade is a product of <strong>Pacedall Labs</strong> — a studio dedicated to crafting delightful digital experiences. From focused wellness tools to full-on entertainment, we build products that make everyday life more interesting.</p>
+        <p>Our arcade is designed with one principle: games should be instantly accessible, endlessly replayable, and always fun. No downloads, no installs — just open your browser and play.</p>
+        <a href="https://pacedall.com" class="btn btn-outline" target="_blank">Visit Pacedall Labs →</a>
+      </div>
+      <div class="about-products">
+        <h3 class="products-title">More from Pacedall Labs</h3>
+        <div class="products-list">
+          <a href="#" class="product-item">
+            <span class="product-dot dot-signal"></span>
+            <span class="product-name">Pacedall Signal</span>
+            <span class="product-arrow">→</span>
+          </a>
+          <a href="#" class="product-item">
+            <span class="product-dot dot-mirror"></span>
+            <span class="product-name">Pacedall Mirror</span>
+            <span class="product-arrow">→</span>
+          </a>
+          <a href="#" class="product-item">
+            <span class="product-dot dot-flow"></span>
+            <span class="product-name">Pacedall Flow</span>
+            <span class="product-arrow">→</span>
+          </a>
+          <a href="#" class="product-item">
+            <span class="product-dot dot-voice"></span>
+            <span class="product-name">Pacedall Voice</span>
+            <span class="product-arrow">→</span>
+          </a>
+          <a href="#" class="product-item">
+            <span class="product-dot dot-pulse"></span>
+            <span class="product-name">Pacedall Pulse</span>
+            <span class="product-arrow">→</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Pacedall Arcade" class="footer-logo" />
+        <p>Play. Score. Repeat.<br/>A Pacedall Labs Product.</p>
+        <div class="social-links">
+          <a href="#" aria-label="Twitter">𝕏</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Discord">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Games</h4>
+        <ul>
+          <li><a href="#">Featured</a></li>
+          <li><a href="#">New Releases</a></li>
+          <li><a href="#">Categories</a></li>
+          <li><a href="#">Leaderboard</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Account</h4>
+        <ul>
+          <li><a href="login.html">Log In</a></li>
+          <li><a href="signup.html">Sign Up Free</a></li>
+          <li><a href="signup.html">Go Pro</a></li>
+          <li><a href="#">Settings</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="#">About</a></li>
+          <li><a href="#">Blog</a></li>
+          <li><a href="#">Contact</a></li>
+          <li><a href="#">Privacy Policy</a></li>
+          <li><a href="#">Terms of Service</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2025 Pacedall Labs. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
