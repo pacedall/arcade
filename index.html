@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Pacedall Arcade — Retro arcade games built by AI. Play free in your browser or download for iOS & Android. No sign-up. No data collected. Just play." />
+  <title>Pacedall Arcade — Retro Games Built by AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;800;900&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,300&family=Share+Tech+Mono&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== STICKY HEADER ===== -->
+  <header class="header" id="header">
+    <div class="header-inner">
+      <a href="index.html" class="header-logo">
+        <img src="images/logo.png" alt="Pacedall Arcade" />
+        <span class="header-logo-text">ARCADE</span>
+      </a>
+      <nav class="header-nav" id="main-nav">
+        <a href="#games">Games</a>
+        <a href="#platforms">Platforms</a>
+        <a href="#about">About</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a href="#platforms" class="btn btn-crt">INSERT COIN →</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="header-accent-bar"></div>
+  </header>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav">
+    <button class="mobile-nav-close" id="mobile-close" aria-label="Close menu">✕</button>
+    <a href="#games" class="mobile-nav-link">Games</a>
+    <a href="#platforms" class="mobile-nav-link">Platforms</a>
+    <a href="#about" class="mobile-nav-link">About</a>
+    <a href="#faq" class="mobile-nav-link">FAQ</a>
+    <a href="#platforms" class="btn btn-crt" style="margin-top:24px;">INSERT COIN →</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero">
+    <div class="hero-scanlines" aria-hidden="true"></div>
+    <div class="hero-grid" aria-hidden="true"></div>
+    <div class="hero-inner">
+
+      <div class="hero-copy">
+        <div class="hero-tag">
+          <span class="pixel-dot"></span>
+          AI-BUILT RETRO GAMES
+          <span class="pixel-dot"></span>
+        </div>
+        <h1 class="hero-title">
+          PLAY<br/>
+          <span class="hero-title-line2">THE CLASSICS.</span><br/>
+          <span class="hero-title-line3">REINVENTED.</span>
+        </h1>
+        <p class="hero-desc">
+          Pacedall Arcade brings the golden age of 70s &amp; 80s arcade gaming back to life — built entirely by AI. Play free in your browser, or take the games offline on iPhone and Android.
+        </p>
+        <div class="hero-badges">
+          <div class="hero-badge"><span class="badge-icon">🎮</span>Browser Games</div>
+          <div class="hero-badge"><span class="badge-icon">📱</span>iOS &amp; Android</div>
+          <div class="hero-badge"><span class="badge-icon">📶</span>Works Offline</div>
+          <div class="hero-badge"><span class="badge-icon">🔓</span>No Sign-Up Ever</div>
+        </div>
+        <div class="hero-cta">
+          <a href="#games" class="btn btn-crt btn-lg">PLAY NOW — FREE</a>
+          <a href="#platforms" class="btn btn-ghost-retro btn-lg">GET THE APP</a>
+        </div>
+      </div>
+
+      <div class="hero-cabinet" aria-hidden="true">
+        <div class="cabinet-body">
+          <div class="cabinet-marquee">
+            <span>PACEDALL ARCADE</span>
+          </div>
+          <div class="cabinet-bezel">
+            <div class="cabinet-screen">
+              <canvas id="arcade-canvas" width="240" height="200"></canvas>
+              <div class="screen-crt-overlay"></div>
+            </div>
+          </div>
+          <div class="cabinet-controls">
+            <div class="ctrl-joystick"><div class="ctrl-stick"></div></div>
+            <div class="ctrl-buttons">
+              <button class="ctrl-btn ctrl-red" aria-label="Fire"></button>
+              <button class="ctrl-btn ctrl-yellow" aria-label="Jump"></button>
+            </div>
+          </div>
+          <div class="cabinet-coin-slot">
+            <div class="coin-slot-line"></div>
+            <span>INSERT COIN</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Scrolling marquee -->
+    <div class="hero-marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>★ SPACE INVADERS STYLE</span><span>★ SNAKE CLASSIC</span><span>★ BREAKOUT REBORN</span><span>★ ASTEROIDS REVIVAL</span><span>★ FROGGER REIMAGINED</span><span>★ PAC PATROL</span><span>★ GALAGA ECHO</span><span>★ TETRIS FLOW</span>
+        <span>★ SPACE INVADERS STYLE</span><span>★ SNAKE CLASSIC</span><span>★ BREAKOUT REBORN</span><span>★ ASTEROIDS REVIVAL</span><span>★ FROGGER REIMAGINED</span><span>★ PAC PATROL</span><span>★ GALAGA ECHO</span><span>★ TETRIS FLOW</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== AI BUILT STRIP ===== -->
+  <section class="ai-strip">
+    <div class="ai-strip-inner">
+      <div class="ai-strip-icon">🤖</div>
+      <div class="ai-strip-text">
+        <strong>100% Built by AI.</strong> Every game in Pacedall Arcade — the code, the mechanics, the levels — is designed, written, and tested by artificial intelligence under the Pacedall Labs umbrella.
+      </div>
+      <div class="ai-strip-badge">AI POWERED</div>
+    </div>
+  </section>
+
+  <!-- ===== GAMES SECTION ===== -->
+  <section class="section" id="games">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="retro-label">GAME LIBRARY</div>
+        <h2 class="section-title">PICK YOUR GAME</h2>
+        <p class="section-sub">All games free to play in browser. Download for offline on mobile.</p>
+      </div>
+
+      <div class="filter-row">
+        <button class="filter-pill active" data-cat="all">ALL GAMES</button>
+        <button class="filter-pill" data-cat="action">ACTION</button>
+        <button class="filter-pill" data-cat="puzzle">PUZZLE</button>
+        <button class="filter-pill" data-cat="shooter">SHOOTER</button>
+        <button class="filter-pill" data-cat="runner">RUNNER</button>
+      </div>
+
+      <div class="games-grid" id="games-grid">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PLATFORMS ===== -->
+  <section class="section section-dark" id="platforms">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="retro-label">PLATFORMS</div>
+        <h2 class="section-title">PLAY ANYWHERE</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.7)">Browser, iPhone, Android — all games, all devices.</p>
+      </div>
+
+      <div class="platforms-grid">
+        <div class="platform-card">
+          <div class="platform-icon">🌐</div>
+          <h3 class="platform-name">Browser</h3>
+          <p class="platform-desc">Launch any game instantly in Chrome, Safari, Firefox, or Edge. No download. No account. Just click and play.</p>
+          <ul class="platform-features">
+            <li>✓ Instant play — no install</li>
+            <li>✓ All major browsers supported</li>
+            <li>✓ Desktop, tablet, mobile</li>
+            <li>✓ Keyboard &amp; touch controls</li>
+          </ul>
+          <a href="#games" class="btn btn-crt" style="margin-top:auto;">PLAY NOW</a>
+        </div>
+        <div class="platform-card platform-card--featured">
+          <div class="platform-badge">OFFLINE READY</div>
+          <div class="platform-icon">📱</div>
+          <h3 class="platform-name">iPhone &amp; iPad</h3>
+          <p class="platform-desc">Download the Pacedall Arcade app from the App Store and play your games even when you're completely offline.</p>
+          <ul class="platform-features">
+            <li>✓ Full offline gameplay</li>
+            <li>✓ Touch-optimised controls</li>
+            <li>✓ iOS 16+ supported</li>
+            <li>✓ No Apple ID required to play</li>
+          </ul>
+          <a href="#" class="btn btn-crt" style="margin-top:auto;">APP STORE →</a>
+        </div>
+        <div class="platform-card platform-card--featured">
+          <div class="platform-badge">OFFLINE READY</div>
+          <div class="platform-icon">🤖</div>
+          <h3 class="platform-name">Android</h3>
+          <p class="platform-desc">Get Pacedall Arcade on Google Play. Full offline support, haptic feedback, and native Android controls.</p>
+          <ul class="platform-features">
+            <li>✓ Full offline gameplay</li>
+            <li>✓ Android 9.0+ supported</li>
+            <li>✓ Haptic feedback support</li>
+            <li>✓ No Google account required to play</li>
+          </ul>
+          <a href="#" class="btn btn-crt" style="margin-top:auto;">GOOGLE PLAY →</a>
+        </div>
+      </div>
+
+      <div class="offline-banner">
+        <div class="offline-icon">📶</div>
+        <div>
+          <strong>Offline-first architecture.</strong> Pacedall Arcade mobile apps store all game assets on-device at install. Once downloaded, internet is never required to play — perfect for travel, commuting, or anywhere with no signal.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="section" id="about">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="retro-label">ABOUT</div>
+        <h2 class="section-title">WHAT IS PACEDALL ARCADE?</h2>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p>Pacedall Arcade is a collection of small, timeless retro arcade games inspired by the golden age of the 1970s and 80s — rebuilt for modern devices by artificial intelligence.</p>
+          <p>Every game is designed, coded, and balanced entirely by AI as part of the <strong>Pacedall Labs</strong> product suite. Think Pac-Man, Space Invaders, Snake, Breakout — the classics reimagined with crisp pixel art and tight controls, no bloat, no complexity.</p>
+          <p>We believe great games don't need accounts, subscriptions, or your email address. Pick a game. Play. That's it.</p>
+          <div class="about-principles">
+            <div class="principle">
+              <div class="principle-icon">🔒</div>
+              <div>
+                <strong>Zero Data Policy</strong>
+                <span>We collect nothing. No analytics, no tracking, no personal data.</span>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-icon">🚫</div>
+              <div>
+                <strong>No Account Required</strong>
+                <span>Play any game instantly without signing up for anything.</span>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-icon">🤖</div>
+              <div>
+                <strong>AI-Built</strong>
+                <span>Every line of code and game mechanic is generated and tested by AI.</span>
+              </div>
+            </div>
+            <div class="principle">
+              <div class="principle-icon">📶</div>
+              <div>
+                <strong>Offline Capable</strong>
+                <span>Mobile apps work 100% offline once installed.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="about-visual">
+          <div class="retro-terminal">
+            <div class="terminal-bar">
+              <span></span><span></span><span></span>
+              <div class="terminal-title">PACEDALL ARCADE v1.0</div>
+            </div>
+            <div class="terminal-body" id="terminal-body">
+              <div class="terminal-line">&gt; SYSTEM BOOT...</div>
+              <div class="terminal-line terminal-dim">&gt; AI ENGINE READY</div>
+              <div class="terminal-line">&gt; LOADING GAME LIBRARY...</div>
+              <div class="terminal-line terminal-dim">&gt; 12 GAMES FOUND ✓</div>
+              <div class="terminal-line">&gt; OFFLINE MODE: ENABLED</div>
+              <div class="terminal-line terminal-dim">&gt; NO ACCOUNTS REQUIRED ✓</div>
+              <div class="terminal-line">&gt; ZERO DATA COLLECTED ✓</div>
+              <div class="terminal-line terminal-gold">&gt; READY TO PLAY_<span class="cursor">█</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== GAME STATS ===== -->
+  <section class="stats-strip">
+    <div class="stats-inner">
+      <div class="stat-item">
+        <div class="stat-num" data-target="12">0</div>
+        <div class="stat-label">GAMES</div>
+      </div>
+      <div class="stat-divider">◆</div>
+      <div class="stat-item">
+        <div class="stat-num">FREE</div>
+        <div class="stat-label">ALWAYS</div>
+      </div>
+      <div class="stat-divider">◆</div>
+      <div class="stat-item">
+        <div class="stat-num">3</div>
+        <div class="stat-label">PLATFORMS</div>
+      </div>
+      <div class="stat-divider">◆</div>
+      <div class="stat-item">
+        <div class="stat-num">0</div>
+        <div class="stat-label">DATA COLLECTED</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="retro-label">HELP</div>
+        <h2 class="section-title">QUESTIONS?</h2>
+      </div>
+      <div class="faq-list" id="faq-list">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PACEDALL FAMILY ===== -->
+  <section class="section section-navy">
+    <div class="section-inner">
+      <div class="section-header">
+        <div class="retro-label">PACEDALL LABS</div>
+        <h2 class="section-title">MORE FROM THE FAMILY</h2>
+        <p class="section-sub" style="color:rgba(255,255,255,0.65)">Pacedall Arcade is one of many products built by Pacedall Labs.</p>
+      </div>
+      <div class="products-row" id="products-row">
+        <!-- Populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="Pacedall Arcade" class="footer-logo" />
+        <p>Retro arcade games built by AI.<br/>A Pacedall Labs product.</p>
+        <div class="footer-social">
+          <a href="#" aria-label="Twitter / X">𝕏</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Discord">💬</a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>GAMES</h4>
+        <ul>
+          <li><a href="#games">All Games</a></li>
+          <li><a href="#games">Action</a></li>
+          <li><a href="#games">Puzzle</a></li>
+          <li><a href="#games">Shooters</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>PLATFORMS</h4>
+        <ul>
+          <li><a href="#platforms">Play in Browser</a></li>
+          <li><a href="#">iOS App Store</a></li>
+          <li><a href="#">Google Play</a></li>
+          <li><a href="#platforms">Offline Mode</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>PACEDALL LABS</h4>
+        <ul>
+          <li><a href="https://pacedall.com" target="_blank" rel="noopener">pacedall.com</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="https://terms.pacedall.com" target="_blank" rel="noopener">Terms of Service</a></li>
+          <li><a href="https://privacy.pacedall.com" target="_blank" rel="noopener">Privacy Policy</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <div class="footer-legal-inner">
+        <p>© 2026 Pacedall Labs. All rights reserved. Pacedall Arcade collects zero personal data. No sign-up required.</p>
+        <div class="footer-legal-links">
+          <a href="https://terms.pacedall.com" target="_blank" rel="noopener">Terms of Service</a>
+          <span>|</span>
+          <a href="https://privacy.pacedall.com" target="_blank" rel="noopener">Privacy Policy</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">▲</button>
+
+  <script src="script.js"></script>
+</body>
+</html>
